@@ -1,0 +1,66 @@
+package com.techpalle.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class CalculatorController 
+{   
+	@RequestMapping(value="calc", params="btnAdd")
+	public ModelAndView addition(String tbFn,String tbSn)
+	{
+		ModelAndView mv=new ModelAndView();
+		
+		int res=Integer.parseInt(tbFn)+Integer.parseInt(tbSn);
+		mv.addObject("result",res);
+		
+		mv.setViewName("display.jsp");
+		 return mv;
+	}
+	@RequestMapping(value="calc", params="btnSub")
+	public ModelAndView Subtraction(String tbFn,String tbSn)
+	{
+		ModelAndView mv=new ModelAndView();
+		
+		int res=Integer.parseInt(tbFn)-Integer.parseInt(tbSn);
+		mv.addObject("result",res);
+		
+		mv.setViewName("display.jsp");
+		 return mv;
+	}
+	@RequestMapping(value="calc", params="btnMul")
+	public ModelAndView Multiplication(String tbFn,String tbSn)
+	{
+		ModelAndView mv=new ModelAndView();
+		
+		int res=Integer.parseInt(tbFn)*Integer.parseInt(tbSn);
+		mv.addObject("result",res);
+		
+		mv.setViewName("display.jsp");
+		 return mv;
+	}@RequestMapping(value="calc", params="btnDiv")
+	public ModelAndView Division(String tbFn,String tbSn)
+	{
+		ModelAndView mv=new ModelAndView();
+		
+		int res=Integer.parseInt(tbFn)/Integer.parseInt(tbSn);
+		mv.addObject("result",res);
+		
+		mv.setViewName("display.jsp");
+		 return mv;
+	}
+	@RequestMapping(value="calc", params="btnMod")
+	public ModelAndView Modulus(String tbFn,String tbSn)
+	{
+		ModelAndView mv=new ModelAndView();
+		
+		int res=Integer.parseInt(tbFn)%Integer.parseInt(tbSn);
+		mv.addObject("result",res);
+		
+		mv.setViewName("display.jsp");
+		 return mv;
+	}
+
+}
+
